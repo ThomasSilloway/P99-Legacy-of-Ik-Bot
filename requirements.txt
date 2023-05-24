@@ -1,2 +1,5 @@
 discord
 pyinstaller
+pygsheets
+pytz
+beautifulsoup4

@@ -1,5 +1,6 @@
 from configparser import ConfigParser
 from tkinter import Tk, filedialog
+from json import dumps
 
 CONFIG_NAME             = 'config.ini'
 CONFIG_EQ_KEY           = 'EVERQUEST_DATA'
@@ -20,7 +21,7 @@ except:
 
 if eqdata is None:
     eqdata = {
-        CONFIG_CHAR_NAME_KEY: input("Enter character name:")
+        CONFIG_CHAR_NAME_KEY: input("Enter character name:").title()
     }
 
     print('Select where P99 Everquest is Installed ie C:\\Everquest')
@@ -48,9 +49,14 @@ HEARTBEAT               = 60
 # change this if you need to have multiple bots with same commands present on a server
 BOT_COMMAND_PREFIX      = '!'
 
-# token corresponds to the bot from discord developer portal
-BOT_TOKEN               = '<INSERT_BOT_TOKEN>'
+# Bot intents/permissions - new in 1.5
+#BOT_INTENTS     = 
 
-# some server ID's
-DISCORD_SERVER_NAME         = '<INSERT DISCORD NAME ie LevelUpDiscord>'
-DISCORD_SERVER_CHANNELID    = 293874982734  # Replace this with your ChannelID - Select it in Dev mode
+# token corresponds to the bot from discord developer portal
+BOT_TOKEN               = ''
+
+DISCORD_SERVER_CHANNELID    = ''  # Replace this with your ChannelID - Select it in Dev mode
+# NOTE: ChannelID must be an INT not a string
+
+# Google Sheets Key
+GOOGLE_SHEETS_KEY = dumps('')
